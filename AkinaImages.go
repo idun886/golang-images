@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 )
-//随机数函数
+//随机数函数  （抄的）
 func isNum(a int) int {
 	rand.Seed(time.Now().UnixNano())
 	number := rand.Intn(a)
@@ -17,9 +17,9 @@ func isNum(a int) int {
 
 func main() {
 	r := gin.Default()
-	//设置图片静态资源路径
+	//设置图片静态资源路径  （抄的）
 	r.Static("images", "./images/")
-	//设置 get 的url路径
+	//设置 get 的url路径    
 	r.GET("/Akina", func(c *gin.Context) {
 		//将读取的文件传值到 切片中 再遍历
 		de, _ := ioutil.ReadDir("images")
@@ -49,6 +49,7 @@ func main() {
 			})
 		}
 	})
+	//运行在5220端口
 	r.Run(":5220")
 
 }
